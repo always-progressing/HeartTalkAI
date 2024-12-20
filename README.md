@@ -5,6 +5,15 @@
 - 支持情感倾诉、心理咨询、生活困扰等内容的交流。
 - 使用微调的 AI 模型进行对话和情感共情，模拟真实且更温暖的论坛氛围。
 
+### 架构
+```
+my_project/
+├── app.py                   # Flask 后端主程序
+├── SparkApi.py              # 调用 API 和处理 WebSocket 请求的 Python 脚本
+├── index.html               # 前端 HTML 页面
+├── test.py                  # 仅测试能否调用api，可忽略
+├── README.md                # 项目说明文档
+```
 ### 1. 安装依赖
 确保您已安装 Python 3 和 pip。然后，安装所需的 Python 包。
 安装Flask、websocket-client
