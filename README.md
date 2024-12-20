@@ -19,7 +19,7 @@ websocket-client==1.8.0
 ### 2. 将项目下载到本地
 在bash中进入项目根目录
 
-3. 启动 Flask 服务
+### 3. 启动 Flask 服务
 运行 app.py 启动本地服务器：
 
 ```bash
