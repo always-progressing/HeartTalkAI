@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心语桥——AI心理论坛</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .user-message, .assistant-reply {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+        .user-message {
+            background-color: #d1ecf1;
+            text-align: left;
+        }
+        .assistant-reply {
+            background-color: #f8d7da;
+        }
+        .input-container {
+            display: flex;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>心语桥——AI心理论坛</h1>
+        <p>在这里分享您的心情，与 AI 一起探讨心理健康话题</p>
+    </header>
+    <main id="forum">
+        <!-- Forum posts will appear here -->
+    </main>
+    <div class="input-container">
+        <input type="text" id="user-input" placeholder="分享您的心情..." />
+        <button onclick="sendMessage()">发布</button>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Display user message
+            displayPost(message, 'user-message');
+            input.value = '';
+
+            try {
+                const response = await fetch('/get_reply', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                displayPost(data.reply, 'assistant-reply');
+            } catch (error) {
+                console.error('Error:', error);
+                displayPost('发生错误，请稍后再试。', 'assistant-reply');
+            }
+        }
+
+        function displayPost(content, className) {
+            const forum = document.getElementById('forum');
+            const postDiv = document.createElement('div');
+            postDiv.className = `post ${className}`;
+            postDiv.textContent = content;
+            forum.appendChild(postDiv);
+
+            // Scroll to the bottom
+            forum.scrollTop = forum.scrollHeight;
+        }
+    </script>
+</body>
+</html>
