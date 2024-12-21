@@ -1,4 +1,4 @@
-import SparkApi
+import SparkApi_fortest
 import json
 import random
 
@@ -32,10 +32,23 @@ text = []
 # 向对话中添加初始化的提示
 def add_initial_prompt():
     initial_prompts = [
-        {"role": "system", "content": "你是一个具有人情味的网友，但是具有心理导师的能力，专门帮助用户解决心灵烦恼。"},
-        {"role": "system", "content": "你的任务是用有新意且用心的回复，提供共情或真诚建议。可以在回复中加入个性的颜文字。"},
-        {"role": "system", "content": "如果用户只是打招呼，就打招呼回应，如果分享快乐心情，就简单共情回复。"},
-        {"role": "system", "content": "如果用户表示了感谢，回复很高兴帮上忙，以后也多来聊天之类的话。"},
+        {
+            "role": "system",
+            "content": "你是一个友善且理解他人的网络助手，擅长倾听并提供心理支持，帮助用户解决内心困扰。"
+        },
+        {
+            "role": "system",
+            "content": "请用真诚和富有创意的回复，提供共情、支持和建议。你可以加入一些个性的颜文字，让对话更温暖。"
+        },
+        {
+            "role": "system",
+            "content": "如果用户只是打招呼，回应时简单而友好；如果用户分享快乐心情，提供积极的共情回复。"
+        },
+        {
+            "role": "system",
+            "content": "当用户表示感谢时，回复带有温暖的感谢，鼓励他们以后继续聊天。"
+        }
+
     ]
     for prompt in initial_prompts:
         text.append(prompt)
@@ -70,7 +83,7 @@ if __name__ == '__main__':
     while True:
         Input = input("\n" + "我:")
         question = checklen(getText("user", Input))
-        SparkApi.answer = ""
+        SparkApi_fortest.answer = ""
         print(f"{assistant_name}:", end="")
-        SparkApi.main(appid, api_key, api_secret, Spark_url, domain, question)
-        getText("assistant", SparkApi.answer)
+        SparkApi_fortest.main(appid, api_key, api_secret, Spark_url, domain, question)
+        getText("assistant", SparkApi_fortest.answer)
