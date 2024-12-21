@@ -5,16 +5,29 @@
 - 支持情感倾诉、心理咨询、生活困扰等内容的交流。
 - 使用微调的 AI 模型进行对话和情感共情，模拟真实且更温暖的论坛氛围。
 
-### 架构
+## 架构
 ```
 my_project/
 ├── app.py                   # Flask 后端主程序
 ├── SparkApi.py              # 调用 API 和处理 WebSocket 请求的 Python 脚本
 ├── index.html               # 前端 HTML 页面
-├── test.py                  # 仅测试能否调用api，可忽略
+├── test.py                  # 调用api体验模型，直接运行即可体验
 ├── README.md                # 项目说明文档
 ```
-### 1. 安装依赖
+
+## 如何体验？
+### 运行python脚本直接体验
+1. 下载项目代码
+2. 运行test.py
+比如在git bash，进入项目根目录，运行test.py
+```bash
+python test.py
+```
+4. 在控制台的“我：”后输入想说的话即可（若在终端或命令行运行同理）
+![屏幕截图 2024-12-20 184157](https://github.com/user-attachments/assets/7bb76cfb-0b14-45f3-b803-54facb33f8b9)
+
+### 在html网页上体验
+#### 1. 安装依赖
 确保您已安装 Python 3 和 pip。然后，安装所需的 Python 包。
 安装Flask、websocket-client
 ```bash
@@ -25,10 +38,10 @@ pip install websocket-client
 Flask==3.0.3
 websocket-client==1.8.0
 
-### 2. 将项目下载到本地
+#### 2. 将项目下载到本地
 在bash中进入项目根目录
 
-### 3. 启动 Flask 服务
+#### 3. 启动 Flask 服务
 运行 app.py 启动本地服务器：
 
 ```bash
