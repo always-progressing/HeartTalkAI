@@ -23,7 +23,7 @@ my_project/
 ```bash
 python test.py
 ```
-4. 在控制台的“我：”后输入想说的话即可（若在终端或命令行运行同理）
+4. 在控制台的“我：”后输入想说的话后回车即可（若在终端或命令行运行同理）
 ![屏幕截图 2024-12-20 184157](https://github.com/user-attachments/assets/7bb76cfb-0b14-45f3-b803-54facb33f8b9)
 
 ### 在html网页上体验
