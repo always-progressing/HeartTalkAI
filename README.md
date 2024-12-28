@@ -16,7 +16,11 @@ my_project/
 ```
 
 ## 如何体验？
-### 1. 运行python脚本直接体验
+### **在网站上直接体验！**
+https://hearttalkai-2.onrender.com/
+![image](https://github.com/user-attachments/assets/93052738-692e-4272-b1e8-620117d019c8)
+
+### 1. 运行python脚本体验
 1. 下载项目代码
 2. 运行test.py
 比如在git bash，进入项目根目录，运行test.py
@@ -26,7 +30,7 @@ python test.py
 4. 在控制台的“我：”后输入想说的话后回车即可（若在终端或命令行运行同理）
 ![屏幕截图 2024-12-20 184157](https://github.com/user-attachments/assets/7bb76cfb-0b14-45f3-b803-54facb33f8b9)
 
-### 2. 在html网页上体验
+### 2. 在本机html网页上体验
 #### 1. 安装依赖
 确保您已安装 Python 3 和 pip。然后，安装所需的 Python 包。
 安装Flask、websocket-client
