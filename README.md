@@ -17,7 +17,7 @@ my_project/
 
 ## 如何体验？
 ### **在网站上直接体验！**
-https://hearttalkai-2.onrender.com/
+[https://hearttalkai.onrender.com/](https://hearttalkai.onrender.com)
 ![image](https://github.com/user-attachments/assets/93052738-692e-4272-b1e8-620117d019c8)
 
 ### 1. 运行python脚本体验
